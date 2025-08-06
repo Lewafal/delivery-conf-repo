@@ -6,13 +6,15 @@ spring:
     url: jdbc:postgresql://localhost:5432/clientdb
     username: postgres
     password: admin
-
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      #ddl-auto: update
+    #show-sql: true
+    #properties:
+    #  hibernate:
+    #    format_sql: true
+     #   dialect: org.hibernate.dialect.PostgreSQLDialect
