@@ -4,6 +4,36 @@ server:
 spring:
   application:
     name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: users-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/users/**
+        - id: auth-service
+          uri: http://localhost:8090
+          predicates:
+            - Path=/auth/**
+        - id: product-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/products/**
+
+springdoc:
+  api-docs:
+    enabled: true
+    groups:
+      enabled: true
+  swagger-ui:
+    enabled: true
+    urls:
+      - name: Users Service
+        url: /users/v3/api-docs
+      - name: Auth Service
+        url: /auth/v3/api-docs
+      - name: Product Service
+        url: /products/v3/api-docs
 
 eureka:
   client:

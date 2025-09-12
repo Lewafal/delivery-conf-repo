@@ -31,3 +31,9 @@ security:
   jwt:
     secret: "change_me_with_a_long_random_secret_at_least_32_chars"  # DOIT être le même que users-service
     expiration-ms: 3600000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
