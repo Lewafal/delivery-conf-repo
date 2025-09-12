@@ -23,10 +23,9 @@ spring:
 springdoc:
   api-docs:
     enabled: true
-    groups:
-      enabled: true
   swagger-ui:
     enabled: true
+    path: /swagger-ui.html
     urls:
       - name: Users Service
         url: /users/v3/api-docs
